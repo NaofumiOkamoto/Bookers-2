@@ -1,0 +1,31 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.crearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+header {
+  height: 50px;
+  background-color: black;
+  color: #fff
+}
+.header_list {
+  display: inline-block;
+}
+.header_list_box {
+  float: right;
+}
+.header_title_box {
+  float: left;
+}
+.col-xs-9 {
+  background-color: #ccc;
+}
+.col-xs-3 {
+  background-color: yellow;
+}
+.new_book {
+  background-color: lightgreen;
+}
