@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   attachment :profile_image #refileを使うために必要
   validates :name, length: { in: 2..20 }
+  has_many :books, dependent: :destroy
 
   def email_required?
     false

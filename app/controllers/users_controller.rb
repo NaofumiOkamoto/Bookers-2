@@ -4,6 +4,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @book = Book.new
+    @books = @user.books
+    # 上は、@books = Book.where(user_id: @user.id)と同じ意味
+    # has_manyで.booksのメソッドが使えるようになる。
   end
 
   def index
