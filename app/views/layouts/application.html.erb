@@ -11,41 +11,42 @@
 
   <body>
     <header class="clearfix">
-      <nav class="header_title_box">
-        <h1>Bookers</h1>
-      </nav>
-      <nav>
-        <ul class="header_list_box">
-          <% if user_signed_in? %>
-            <li class="header_list">
-              <a class="glyphicon glyphicon-home home">
-              <%= link_to 'Home', user_path(current_user.id) %>
-            </li>
-            <li class="header_list">
-              <%= link_to 'Users', users_path %>
-            </li>
-            <li class="header_list">
-              <%= link_to 'Books', destroy_user_session_path, method: :delete %>
-            </li>
-            <li class="header_list">
-              <%= link_to 'log out', destroy_user_session_path, method: :delete %>
-            </li>
-          <% else %>
-            <li class="header_list">
-              <%= link_to 'Home', destroy_user_session_path, method: :delete %>
-            </li>
-            <li class="header_list">
-              <%= link_to 'About', destroy_user_session_path, method: :delete %>
-            </li>
-            <li class="header_list">
-              <%= link_to 'Sign up', destroy_user_session_path, method: :delete %>
-            </li>
-            <li class="header_list">
-              <%= link_to 'login', destroy_user_session_path, method: :delete %>
-            </li>
-          <% end %>
-        </ul>
-      </nav>
+      <div class="container">
+        <nav class="header_title_box">
+          <span>Bookers</span>
+        </nav>
+        <nav>
+          <ul class="header_list_box">
+            <% if user_signed_in? %>
+              <li class="header_list">
+                <%= link_to ' Home', user_path(current_user.id), class:"glyphicon glyphicon-home home" %>
+              </li>
+              <li class="header_list">
+                <%= link_to 'Users', users_path, class:"glyphicon glyphicon-user users" %>
+              </li>
+              <li class="header_list">
+                <%= link_to ' Books', destroy_user_session_path, method: :delete, class:"glyphicon glyphicon-book books" %>
+              </li>
+              <li class="header_list">
+                <%= link_to ' logout', destroy_user_session_path, method: :delete,class:"glyphicon glyphicon-log-out logout"%>
+              </li>
+            <% else %>
+              <li class="header_list">
+                <%= link_to ' Home', root_path, class:"glyphicon glyphicon-home home" %>
+              </li>
+              <li class="header_list">
+                <%= link_to ' About', destroy_user_session_path, method: :delete, class:"glyphicon glyphicon-link about"%>
+              </li>
+              <li class="header_list">
+                <%= link_to ' Sign up', destroy_user_session_path, method: :delete, class:"glyphicon glyphicon-edit sign_up"%>
+              </li>
+              <li class="header_list">
+                <%= link_to ' login', destroy_user_session_path, method: :delete, class:"glyphicon glyphicon-log-in sign_in"%>
+              </li>
+            <% end %>
+          </ul>
+        </nav>
+      </div>
     </header>
     <%= yield %>
   </body>
