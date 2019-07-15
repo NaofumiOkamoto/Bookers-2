@@ -7,16 +7,23 @@
   clear: both;
 }
 header {
-  background-color: #999;
+  background-color: #222;
   color: #fff
 }
-.container {
+.header-container {
+  position: fixed;
 }
 .nav {
   list-style: none;
 }
 a {
   color: #9d9d9d;
+}
+.notice {
+  color: green;
+}
+.field {
+  margin-bottom: 10px;
 }
 .header_title_box {
   font-size: 20px;
@@ -50,9 +57,27 @@ header_list span {
 }
 .new_book_form {
   width: 100%;
+  margin-bottom: 10px;
+}
+.new_book_botton {
+  width: 100%;
+}
+.user_books_show {
+  color: #337ab7;
+}
+a:hover {
+  background-color: black;
 }
 .btn {
+}
+table {
+}
+.book_edit_field {
   width: 100%;
+}
+.update_book_submit .btn-primary {
+  width: 100%;
+  margin-bottom: 10px;
 }
 .col-xs-9 {
 }
